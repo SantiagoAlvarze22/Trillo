@@ -54,7 +54,7 @@
     &__icon{
         height: 2rem;
         width: 2rem;
-        fill: var(--color-grey-dark-3);
+        fill: var(--color-grey-dark-3); //to change svg color
     }
 }
 
@@ -86,7 +86,7 @@
     &__icon{
         height: 2.25rem;
         width: 2.25rem;
-        fill: var(--color-grey-dark-2);
+        fill: var(--color-grey-dark-2); //to change svg color
         
     }
 
@@ -112,4 +112,33 @@
         margin-right: 1rem;
     } 
 
+}
+
+///////////////////////////////////////////////////////
+//SIDE NAVEGATION
+
+.side-nav{
+
+    &__item{
+
+    }
+
+    &__link{
+
+    }
+
+    &__icon{
+        width: 1.75rem;
+        height: 1.75rem;
+    }
+}
+
+///////////////////////////////////////////////////////
+//LEGAL TEXT
+
+.legal{
+    font-size: 1.2rem;
+    color: var(--color-grey-light-4);
+    text-align: center;
+    padding: 2.5rem;
 }
