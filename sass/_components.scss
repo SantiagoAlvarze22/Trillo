@@ -82,7 +82,7 @@
         align-items: center;
     }
 
-    &> *:hover{
+    & > *:hover{
         background-color: var(--color-grey-light-2);
     }
 
@@ -90,24 +90,69 @@
         position: relative;
     }
 
+    &__messages{
+        background-color: var(--color-white);
+        position: absolute;
+        display: inline-block;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 0;
+        opacity: 0;
+        border-radius: .3rem;
+        transition: all .3s;
+        overflow: hidden;
+        z-index: 1000;
+        
+        &-item{
+            list-style: none;
+            display: flex;
+  
+
+            &-photo{
+                height: 4.5rem;
+                width: 4.5rem;
+                border-radius: 50%;       
+            }
+
+            &-name{
+                font-size: 1.1rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                margin: .4rem 1rem;
+            }
+
+            &-message{
+                font-size: 1rem;
+                color: var(--color-grey-dark-3);
+                margin: .4rem 1rem;
+            }
+        }
+    }
+
+    &__icon-box--messages:hover &__messages{
+        width: 20rem;
+        opacity: 1;
+        top: 6rem;
+        height: auto;
+    }
+
     &__icon{
         height: 2.25rem;
         width: 2.25rem;
         fill: var(--color-grey-dark-2); //to change svg color
-        
     }
 
     &__notification{
         font-size: .8rem;
         width: 1.75rem;
-        width: 1.75rem;
+        height: 1.75rem;
         border-radius: 50%;
         background-color: var(--color-primary );
         color: #fff;
         position: absolute;
         top: 1.5rem;
         right: 1.5rem;
-
         display: flex;
         justify-content: center;
         align-items: center;
@@ -120,59 +165,55 @@
     } 
 
     &__user-list{
-        background-color: var(--color-white);
-        width: 35%;
+        background-color: var(--color-grey-light-2);
+        
         position: absolute;
         top: 0;
-        right: 0.5rem;
+        right: 0;
         display:inline-block;
-        text-align: start;
-        transition: all .3s;
         opacity: 0;
         border-radius: .3rem;
         z-index: 20;
         overflow: hidden;
-    }
+        transition: all .3s;
 
-    &__user-list-item{
-        list-style: none;
-        position: relative;
-        z-index: 3000;
-    }
+        &-item{
+            list-style: none;
+            position: relative;
+            z-index: 3000;
+            transition: color .3s;
+            
 
-    &__user &__user-list &__user-list-item::before{
-        content: "";
-        position: absolute;
-        height: auto;
-        width: .1rem;
-        transition: color .3s,
-                    background-color .3s,
-                     width .4s cubic-bezier(1, 0, 0, 1);
+            &:hover{
+                color: #fff;
+                width: 50%;
+            }
+
+            &::before{
+                content: "";
+                position: absolute;
+                height: auto;
+                width: .1rem;
+                transition: 
+                            background-color .3s,
+                             width .4s cubic-bezier(1, 0, 0, 1);
+            }
+
+            &:hover::before{
+                color: #fff;
+                height: 100%;
+                width: 100%;
+                z-index: -1;
+                background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+            }
+        }
     }
 
     &__user:hover &__user-list{
-        top: 5rem;
+        width: 50%;
+        top: 6rem;
         opacity: 1;
     }
-    &__user &__user-list &__user-list-item{
-        transition: color .3s,
-    }
-
-    &__user &__user-list &__user-list-item:hover::before{
-        color: #fff;
-        height: 2rem;
-        width: 100%;
-        z-index: -1;
-        background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
-    }
-
-    &__user &__user-list &__user-list-item:hover{
-        color: #fff;
-    }
-
-
-    
-
 }
 
 ///////////////////////////////////////////////////////
